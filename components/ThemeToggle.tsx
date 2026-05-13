@@ -1,34 +1,35 @@
-"use client";
-
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Moon, Sun } from 'lucide-react';
-
-export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) {
-    return (
-      <div className="w-9 h-9 rounded-lg bg-slate-200 dark:bg-slate-700 animate-pulse" />
-    );
-  }
-
-  const isDark = theme === "dark";
-
-  return (
-    <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all duration-200"
-    >
-      {isDark ? (
-        <Sun size={16} />
-      ) : (
-        <Moon size={16} />
-      )}
-    </button>
-  );
-}
+"use client";
+
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+import { Moon, Sun } from 'lucide-react';
+
+export default function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return (
+      <div className="w-9 h-9 rounded-lg bg-green-200 dark:bg-green-700 animate-pulse" />
+    );
+  }
+
+  const isDark = theme === "dark";
+
+  return (
+    <button
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-green-100 dark:bg-green-800 hover:bg-green-50 dark:hover:bg-green-700 border border-green-200 dark:border-green-700 text-green-600 dark:text-green-400 hover:text-green-500 dark:hover:text-green-400 transition-all duration-200"
+    >
+      {isDark ? (
+        <Sun size={16} />
+      ) : (
+        <Moon size={16} />
+      )}
+    </button>
+  );
+}
