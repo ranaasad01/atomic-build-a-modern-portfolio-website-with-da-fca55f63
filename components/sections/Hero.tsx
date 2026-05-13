@@ -96,6 +96,7 @@ export default function Hero() {
           >
             <button
               onClick={scrollToProjects}
+              style={{ backgroundColor: "#ef4444" }}
               className="group flex items-center gap-2 px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all duration-200 shadow-glow hover:shadow-glow-lg hover:-translate-y-0.5"
             >
               View My Work
